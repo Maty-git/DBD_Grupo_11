@@ -1,0 +1,21 @@
+create table if not exists VALORACION (
+	id_valoracion int PRIMARY KEY,
+	puntaje_valoracion int,
+	comentario_valoracion char(150)
+);
+
+create table if not exists PRODUCTO_VALORACION (
+	id_valoracion int,
+	id_producto int not null,
+	PRIMARY KEY(id_producto, id_valoracion),
+	FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
+	FOREIGN KEY (id_valoracion) REFERENCES VALORACION(id_valoracion)
+);
+
+create table if not exists CLIENTE_VALORACION (
+	id_valoracion int,
+	id_cliente int not null,
+	PRIMARY KEY(id_cliente, id_valoracion),
+	FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
+	FOREIGN KEY (id_valoracion) REFERENCES VALORACION(id_valoracion)
+);
