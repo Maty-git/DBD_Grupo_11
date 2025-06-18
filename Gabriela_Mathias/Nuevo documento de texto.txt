@@ -19,3 +19,10 @@ create table if not exists CLIENTE_VALORACION (
 	FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
 	FOREIGN KEY (id_valoracion) REFERENCES VALORACION(id_valoracion)
 );
+
+create table if not exists PERMISOS (
+	id_permisos int PRIMARY KEY,
+	permisos_cliente boolean,
+	permisos_jefe boolean,
+	permisos_globales boolean
+);
