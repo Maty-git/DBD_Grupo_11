@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS PRODUCTO(
+    id_producto serial primary key,
+    nombre_producto varchar(100),
+    url_producto varchar(100),
+    stock_producto int,
+    precio_producto int,
+    id_tienda int, foreign key (id_tienda) references TIENDA(id_tienda),
+    id_jefe int, foreign key (id_jefe) references TIENDA(id_jefe),
+    id_carro_compra int, foreign key (id_carro_compra) references TIENDA(id_carro_compra),
+    id_ubicacion_usuario int, foreign key (id_ubicacion_usuario) references TIENDA(id_ubicacion_usuario),
+    id_ubicacion_tienda int, foreign key (id_ubicacion_tienda) references TIENDA(id_ubicacion_tienda)
+);
+
+
+
+
+CREATE TABLE IF NOT EXISTS RANKING(
+    id_ranking serial primary key,
+    top_productos varchar(100),
+    id_producto int, foreign key (id_producto) references PRODUCTO(id_producto)
+);
+
+CREATE TABLE IF NOT EXISTS CARTA(
+    id_carta serial primary key,
+    año_carta int,
+    estado_carta varchar(100),
+    rareza_carta varchar(100),
+    Tipo_de_juego varchar(100),
+    id_producto int, foreign key (id_producto) references PRODUCTO(id_producto)
+);
+
+
+CREATE TABLE IF NOT EXISTS JUEGO_DE_MESA(
+    id_juego serial primary key,
+    tipo_juego_mesa varchar(100),
+    Tipo_de_juego varchar(100),
+    id_producto int, foreign key (id_producto) references PRODUCTO(id_producto)
+);
+
+CREATE TABLE IF NOT EXISTS RANKING_CARTA(
+    id_ranking_c serial primary key,
+    top_cartas varchar(100),
+    id_carta int, foreign key (id_carta) references CARTA(id_carta)
+);
