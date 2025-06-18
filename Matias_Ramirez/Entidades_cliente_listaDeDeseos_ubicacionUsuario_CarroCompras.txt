@@ -1,0 +1,32 @@
+create table if not exists CLIENTE(
+	id_cliente INT NOT NULL,
+	nombre_cliente VARCHAR(30),
+	correo_cliente VARCHAR(30),
+	contraseña_cliente VARCHAR(30),
+	PRIMARY KEY(id_cliente),
+	FOREING KEY(id_permisos) REFERENCES PERMISOS(id_permisos),
+	FOREING KEY(id_tienda) REFERENCES TIENDA(id_tienda)
+);
+
+create table if not exists LISTA_DE_DESEOS(
+	id_lista_deseos INT NOT NULL,
+	id_cliente INT,
+	PRIMARY KEY(id_lista_deseos),
+	FOREING KEY(id_cliente) REFERENCES CLIENTE(id_cliente)
+);
+
+create table if not exists UBICACION_USUARIO(
+	id_ubicacion INT NOT NULL,
+	comuna_usuario VARCHAR(20),
+	ciudad_usuario VARCHAR(20),
+	calle_usuario VARCHAR(20),
+	PRIMARY KEY(id_ubicacion),
+	FOREING KEY(id_cliente) REFERENCES CLIENTE(id_cliente)
+);
+
+create table if not exists CARRO_DE_COMPRA(
+	id_carro_compra INT,
+	stock_producto INT,
+	PRIMARY KEY(id_carro_compra),
+	FOREING KEY(id_cliente) REFERENCES CLIENTE(id_cliente)
+);
