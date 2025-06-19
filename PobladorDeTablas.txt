@@ -81,3 +81,63 @@ INSERT INTO ubicacion_tienda (comuna_tienda, calle_tienda, ciudad_tienda, id_tie
 ('Santiago Centro', 'Av. Castillos 1212', 'Santiago', 8),
 ('Vitacura', 'Calle Juego 3434', 'Santiago', 9),
 ('Estación Central', 'Camino Final 999', 'Santiago', 10);
+
+INSERT INTO admin (correo_admin, nombre_admin, ubicacion_admin, contraseña_admin, id_permisos) VALUES
+('admin1@debd.cl', 'Admin General', 'Santiago Centro', 'admin123', 3),
+('admin2@debd.cl', 'Root Admin', 'Providencia', 'rootpass', 3),
+('admin3@debd.cl', 'Ana Admin', 'Ñuñoa', 'admin345', 3),
+('admin4@debd.cl', 'Carlos Root', 'Maipú', 'root234', 3),
+('admin5@debd.cl', 'Eva Contreras', 'Las Condes', 'admin456', 3),
+('admin6@debd.cl', 'Luis Romero', 'Vitacura', 'admin567', 3),
+('admin7@debd.cl', 'Carla Fuente', 'Independencia', 'admin678', 3),
+('admin8@debd.cl', 'Felipe Suárez', 'San Miguel', 'admin789', 3),
+('admin9@debd.cl', 'Valentina Ríos', 'La Florida', 'admin890', 3),
+('admin10@debd.cl', 'Tomás Lagos', 'Renca', 'admin901', 3);
+
+INSERT INTO producto (stock_producto, url_producto, nombre_producto, id_jefe, id_tienda, id_carro_compra, id_ubicacion_usuario, id_ubicacion_tienda) VALUES
+(10, 'https://ejemplo.cl/img1.jpg', 'Set de Inicio Magic', 1, 1, 1, 1, 1),
+(15, 'https://ejemplo.cl/img2.jpg', 'Carcassonne', 2, 2, 2, 2, 2),
+(8, 'https://ejemplo.cl/img3.jpg', 'Ticket to Ride', 3, 3, 3, 3, 3),
+(5, 'https://ejemplo.cl/img4.jpg', 'Yu-Gi-Oh Lata Dorada', 1, 1, 4, 4, 1),
+(12, 'https://ejemplo.cl/img5.jpg', 'Catan', 2, 2, 5, 5, 2),
+(9, 'https://ejemplo.cl/img6.jpg', 'Dominion', 4, 4, 6, 6, 4),
+(6, 'https://ejemplo.cl/img7.jpg', '7 Wonders', 5, 5, 7, 7, 5),
+(14, 'https://ejemplo.cl/img8.jpg', 'Dixit', 6, 6, 8, 8, 6),
+(11, 'https://ejemplo.cl/img9.jpg', 'Pandemic', 7, 7, 9, 9, 7),
+(7, 'https://ejemplo.cl/img10.jpg', 'Bang!', 8, 8, 10, 10, 8);
+
+INSERT INTO ranking (top_productos, id_producto) VALUES
+('Más vendido en mayo', 1),
+('Top ventas semana 1', 2),
+('Popular en tablero', 3),
+('Ranking TCG', 4),
+('Favorito por clientes', 5),
+('Recomendado por expertos', 6),
+('Top estrategia', 7),
+('Favorito familias', 8),
+('Cooperativo más jugado', 9),
+('Mejor precio-calidad', 10);
+
+INSERT INTO carta (año_carta, estado_carta, rareza_carta, tipo_de_juego, id_producto) VALUES
+(2019, 'Nueva', 'Rara', 'TCG', 1),
+(2020, 'Usada', 'Común', 'TCG', 4),
+(2021, 'Nueva', 'Ultra Rara', 'TCG', 4),
+(2022, 'Nueva', 'Legendaria', 'TCG', 1),
+(2018, 'Usada', 'Común', 'TCG', 6),
+(2017, 'Nueva', 'Rara', 'TCG', 7),
+(2020, 'Nueva', 'Ultra Rara', 'TCG', 8),
+(2021, 'Usada', 'Épica', 'TCG', 10),
+(2019, 'Nueva', 'Rara', 'TCG', 9),
+(2016, 'Usada', 'Común', 'TCG', 5);
+
+INSERT INTO juego_de_mesa (tipo_juego_mesa, tipo_de_juego, id_producto) VALUES
+('Tablero', 'Estrategia', 2),
+('Viajes', 'Familiar', 3),
+('Colaborativo', 'Competencia', 5),
+('Construcción', 'Estrategia', 6),
+('Civilizaciones', 'Competencia', 7),
+('Creativo', 'Narrativo', 8),
+('Cooperativo', 'Supervivencia', 9),
+('Cartas ocultas', 'Western', 10),
+('Cartas', 'Gestión de recursos', 1),
+('Colonización', 'Competencia', 5);
