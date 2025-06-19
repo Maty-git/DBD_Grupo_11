@@ -1,0 +1,35 @@
+INSERT INTO permisos (id_permisos, permisos_cliente, permisos_jefe, permisos_globales) VALUES
+(1, TRUE, FALSE, FALSE),
+(2, FALSE, TRUE, FALSE),
+(3, FALSE, FALSE, TRUE),
+(4, TRUE, TRUE, FALSE),
+(5, FALSE, TRUE, TRUE),
+(6, TRUE, FALSE, TRUE),
+(7, TRUE, TRUE, TRUE),
+(8, FALSE, FALSE, FALSE),
+(9, TRUE, FALSE, FALSE),
+(10, FALSE, TRUE, FALSE);
+
+INSERT INTO jefe_de_tienda (correo_jefe, nombre_jefe, contraseña_jefe, id_permiso) VALUES
+('jefe1@juegos.cl', 'Mario Reyes', 'clave123', 2),
+('jefe2@juegos.cl', 'Laura Soto', 'clave456', 2),
+('jefe3@juegos.cl', 'Pedro Lagos', 'clave789', 2),
+('jefe4@juegos.cl', 'Valeria Núñez', 'clave101', 2),
+('jefe5@juegos.cl', 'Andrés Pino', 'clave202', 2),
+('jefe6@juegos.cl', 'Javiera Torres', 'clave303', 2),
+('jefe7@juegos.cl', 'Tomás Gálvez', 'clave404', 2),
+('jefe8@juegos.cl', 'Marcela Rojas', 'clave505', 2),
+('jefe9@juegos.cl', 'Cristóbal Figueroa', 'clave606', 2),
+('jefe10@juegos.cl', 'Isabel Muñoz', 'clave707', 2);
+
+INSERT INTO tienda (id_jefe, nombre_tienda, ubicacion_tienda) VALUES
+(1, 'MagicSur Santiago', 'Av. Libertador 1234'),
+(2, 'Cartas y Dados', 'Calle Tolkien 789'),
+(3, 'Tablero Extremo', 'Paseo Gamer 456'),
+(4, 'Rol Sur', 'Calle Dragón 888'),
+(5, 'Dados y Magia', 'Avenida Mítica 234'),
+(6, 'Zona Meeple', 'Pasaje Meeple 765'),
+(7, 'Cartas Épicas', 'Boulevard Épico 1001'),
+(8, 'Juegos del Reino', 'Av. Castillos 1212'),
+(9, 'Duelo Lúdico', 'Calle Juego 3434'),
+(10, 'Tableros Finales', 'Camino Final 999');
