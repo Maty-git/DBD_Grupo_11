@@ -13,3 +13,47 @@ CREATE TABLE IF NOT EXISTS jefe_de_tienda (
     id_permiso INT,
     FOREIGN KEY (id_permiso) REFERENCES permisos(id_permisos)
 );
+
+CREATE TABLE IF NOT EXISTS tienda (
+    id_tienda SERIAL PRIMARY KEY,
+    id_jefe INT,
+    nombre_tienda VARCHAR(100) NOT NULL,
+    ubicacion_tienda VARCHAR(100),
+    FOREIGN KEY (id_jefe) REFERENCES jefe_de_tienda(id_jefe)
+);
+
+CREATE TABLE IF NOT EXISTS cliente (
+    id_cliente INT PRIMARY KEY,
+    nombre_cliente VARCHAR(50),
+    correo_cliente VARCHAR(50),
+    contraseña_cliente VARCHAR(50),
+    id_permisos INT,
+    id_tienda INT,
+    FOREIGN KEY(id_permisos) REFERENCES permisos(id_permisos),
+    FOREIGN KEY(id_tienda) REFERENCES tienda(id_tienda)
+);
+
+CREATE TABLE IF NOT EXISTS ubicacion_usuario (
+    id_ubicacion INT PRIMARY KEY,
+    comuna_usuario VARCHAR(50),
+    ciudad_usuario VARCHAR(50),
+    calle_usuario VARCHAR(50),
+    id_cliente INT,
+    FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente)
+);
+
+CREATE TABLE IF NOT EXISTS carro_de_compra (
+    id_carro_compra INT PRIMARY KEY,
+    stock_producto INT,
+    id_cliente INT,
+    FOREIGN KEY(id_cliente) REFERENCES cliente(id_cliente)
+);
+
+CREATE TABLE IF NOT EXISTS ubicacion_tienda (
+    id_ubicacion_tienda SERIAL PRIMARY KEY,
+    comuna_tienda VARCHAR(100) NOT NULL,
+    calle_tienda VARCHAR(100) NOT NULL,
+    ciudad_tienda VARCHAR(100) NOT NULL,
+    id_tienda INT,
+    FOREIGN KEY (id_tienda) REFERENCES tienda(id_tienda)
+);
