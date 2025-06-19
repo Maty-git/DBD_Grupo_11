@@ -141,3 +141,64 @@ INSERT INTO juego_de_mesa (tipo_juego_mesa, tipo_de_juego, id_producto) VALUES
 ('Cartas ocultas', 'Western', 10),
 ('Cartas', 'Gestión de recursos', 1),
 ('Colonización', 'Competencia', 5);
+
+INSERT INTO ranking_carta (top_cartas, id_carta) VALUES
+('Top 1 TCG', 1),
+('Top 2 TCG', 2),
+('Top 3 TCG', 3),
+('Top 4 TCG', 4),
+('Top 5 TCG', 5),
+('Top 6 TCG', 6),
+('Clásico Recomendado', 7),
+('Antigua y poderosa', 8),
+('Reimpresa popular', 9),
+('TCG de culto', 10);
+
+INSERT INTO valoracion (id_valoracion, puntaje_valoracion, comentario_valoracion) VALUES
+(1, 5, 'Excelente producto'),
+(2, 4, 'Muy bueno'),
+(3, 3, 'Normal'),
+(4, 2, 'Esperaba más'),
+(5, 5, 'Lo mejor del mercado'),
+(6, 4, 'Muy recomendado'),
+(7, 2, 'No es lo que esperaba'),
+(8, 5, 'Excelente juego para grupos'),
+(9, 3, 'Interesante pero lento'),
+(10, 4, 'Volvería a comprarlo');
+
+INSERT INTO producto_valoracion (id_valoracion, id_producto) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
+INSERT INTO cliente_valoracion (id_valoracion, id_cliente) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
+INSERT INTO lista_de_deseos (id_lista_deseos, id_cliente) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
