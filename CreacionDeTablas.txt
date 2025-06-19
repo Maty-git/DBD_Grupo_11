@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS permisos (
+    id_permisos INT PRIMARY KEY,
+    permisos_cliente BOOLEAN,
+    permisos_jefe BOOLEAN,
+    permisos_globales BOOLEAN
+);
+
+CREATE TABLE IF NOT EXISTS jefe_de_tienda (
+    id_jefe SERIAL PRIMARY KEY,
+    correo_jefe VARCHAR(100) NOT NULL UNIQUE,
+    nombre_jefe VARCHAR(100) NOT NULL,
+    contraseña_jefe VARCHAR(100) NOT NULL,
+    id_permiso INT,
+    FOREIGN KEY (id_permiso) REFERENCES permisos(id_permisos)
+);
