@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS PRODUCTO(
     nombre_producto varchar(100),
     url_producto varchar(100),
     stock_producto int,
-    precio_producto int,
+	precio_producto int,
     id_tienda int, foreign key (id_tienda) references TIENDA(id_tienda),
     id_jefe int, foreign key (id_jefe) references TIENDA(id_jefe),
     id_carro_compra int, foreign key (id_carro_compra) references TIENDA(id_carro_compra),
