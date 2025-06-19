@@ -33,3 +33,51 @@ INSERT INTO tienda (id_jefe, nombre_tienda, ubicacion_tienda) VALUES
 (8, 'Juegos del Reino', 'Av. Castillos 1212'),
 (9, 'Duelo Lúdico', 'Calle Juego 3434'),
 (10, 'Tableros Finales', 'Camino Final 999');
+
+INSERT INTO cliente (id_cliente, nombre_cliente, correo_cliente, contraseña_cliente, id_permisos, id_tienda) VALUES
+(1, 'Juan Pérez', 'juan@correo.cl', 'clavejuan', 1, 1),
+(2, 'Ana Gómez', 'ana@correo.cl', 'claveana', 1, 2),
+(3, 'Carlos Díaz', 'carlos@correo.cl', 'clavecarlos', 1, 1),
+(4, 'Sofía Rivas', 'sofia@correo.cl', 'clavesofia', 1, 3),
+(5, 'Luis Martínez', 'luis@correo.cl', 'claveluis', 1, 2),
+(6, 'María León', 'maria@correo.cl', 'clavemaria', 1, 6),
+(7, 'Diego Herrera', 'diego@correo.cl', 'clavediego', 1, 7),
+(8, 'Camila Núñez', 'camila@correo.cl', 'clavecami', 1, 8),
+(9, 'Ignacio Vega', 'ignacio@correo.cl', 'claveignacio', 1, 9),
+(10, 'Josefa Paredes', 'josefa@correo.cl', 'clavejosefa', 1, 10);
+
+INSERT INTO ubicacion_usuario (id_ubicacion, comuna_usuario, ciudad_usuario, calle_usuario, id_cliente) VALUES
+(1, 'Maipú', 'Santiago', 'Av. Pajaritos 1010', 1),
+(2, 'Las Condes', 'Santiago', 'Alonso de Córdova 2020', 2),
+(3, 'Puente Alto', 'Santiago', 'Los Toros 333', 3),
+(4, 'Ñuñoa', 'Santiago', 'Irarrázaval 4040', 4),
+(5, 'Providencia', 'Santiago', 'Manuel Montt 5050', 5),
+(6, 'San Miguel', 'Santiago', 'Calle Uno 11', 6),
+(7, 'La Reina', 'Santiago', 'Avenida Dos 22', 7),
+(8, 'Peñalolén', 'Santiago', 'Pasaje Tres 33', 8),
+(9, 'Renca', 'Santiago', 'Calle Cuatro 44', 9),
+(10, 'Lo Barnechea', 'Santiago', 'Avenida Cinco 55', 10);
+
+INSERT INTO carro_de_compra (id_carro_compra, stock_producto, id_cliente) VALUES
+(1, 3, 1),
+(2, 2, 2),
+(3, 5, 3),
+(4, 1, 4),
+(5, 4, 5),
+(6, 2, 6),
+(7, 3, 7),
+(8, 1, 8),
+(9, 6, 9),
+(10, 4, 10);
+
+INSERT INTO ubicacion_tienda (comuna_tienda, calle_tienda, ciudad_tienda, id_tienda) VALUES
+('Santiago Centro', 'Av. Libertador 1234', 'Santiago', 1),
+('Ñuñoa', 'Calle Tolkien 789', 'Santiago', 2),
+('Las Condes', 'Paseo Gamer 456', 'Santiago', 3),
+('Macul', 'Calle Dragón 888', 'Santiago', 4),
+('Providencia', 'Avenida Mítica 234', 'Santiago', 5),
+('La Florida', 'Pasaje Meeple 765', 'Santiago', 6),
+('Recoleta', 'Boulevard Épico 1001', 'Santiago', 7),
+('Santiago Centro', 'Av. Castillos 1212', 'Santiago', 8),
+('Vitacura', 'Calle Juego 3434', 'Santiago', 9),
+('Estación Central', 'Camino Final 999', 'Santiago', 10);
