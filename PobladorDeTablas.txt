@@ -94,17 +94,17 @@ INSERT INTO admin (correo_admin, nombre_admin, ubicacion_admin, contraseña_admi
 ('admin9@debd.cl', 'Valentina Ríos', 'La Florida', 'admin890', 3),
 ('admin10@debd.cl', 'Tomás Lagos', 'Renca', 'admin901', 3);
 
-INSERT INTO producto (stock_producto, url_producto, nombre_producto, id_jefe, id_tienda, id_carro_compra, id_ubicacion_usuario, id_ubicacion_tienda) VALUES
-(10, 'https://ejemplo.cl/img1.jpg', 'Set de Inicio Magic', 1, 1, 1, 1, 1),
-(15, 'https://ejemplo.cl/img2.jpg', 'Carcassonne', 2, 2, 2, 2, 2),
-(8, 'https://ejemplo.cl/img3.jpg', 'Ticket to Ride', 3, 3, 3, 3, 3),
-(5, 'https://ejemplo.cl/img4.jpg', 'Yu-Gi-Oh Lata Dorada', 1, 1, 4, 4, 1),
-(12, 'https://ejemplo.cl/img5.jpg', 'Catan', 2, 2, 5, 5, 2),
-(9, 'https://ejemplo.cl/img6.jpg', 'Dominion', 4, 4, 6, 6, 4),
-(6, 'https://ejemplo.cl/img7.jpg', '7 Wonders', 5, 5, 7, 7, 5),
-(14, 'https://ejemplo.cl/img8.jpg', 'Dixit', 6, 6, 8, 8, 6),
-(11, 'https://ejemplo.cl/img9.jpg', 'Pandemic', 7, 7, 9, 9, 7),
-(7, 'https://ejemplo.cl/img10.jpg', 'Bang!', 8, 8, 10, 10, 8);
+INSERT INTO producto (stock_producto, url_producto, nombre_producto, precio_producto, id_jefe, id_tienda, id_carro_compra, id_ubicacion_usuario, id_ubicacion_tienda) VALUES
+(10, 'https://ejemplo.cl/img1.jpg', 'Set de Inicio Magic', 19990 , 1, 1, 1, 1, 1),
+(15, 'https://ejemplo.cl/img2.jpg', 'Carcassonne', 25990, 2, 2, 2, 2, 2),
+(8, 'https://ejemplo.cl/img3.jpg', 'Ticket to Ride', 29990, 3, 3, 3, 3, 3),
+(5, 'https://ejemplo.cl/img4.jpg', 'Yu-Gi-Oh Lata Dorada', 14990, 1, 1, 4, 4, 1),
+(12, 'https://ejemplo.cl/img5.jpg', 'Catan', 34990, 2, 2, 5, 5, 2),
+(9, 'https://ejemplo.cl/img6.jpg', 'Dominion', 19990, 4, 4, 6, 6, 4),
+(6, 'https://ejemplo.cl/img7.jpg', '7 Wonders', 25990, 5, 5, 7, 7, 5),
+(14, 'https://ejemplo.cl/img8.jpg', 'Dixit', 29990, 6, 6, 8, 8, 6),
+(11, 'https://ejemplo.cl/img9.jpg', 'Pandemic', 14990, 7, 7, 9, 9, 7),
+(7, 'https://ejemplo.cl/img10.jpg', 'Bang!', 34990, 8, 8, 10, 10, 8);
 
 INSERT INTO ranking (top_productos, id_producto) VALUES
 ('Más vendido en mayo', 1),
