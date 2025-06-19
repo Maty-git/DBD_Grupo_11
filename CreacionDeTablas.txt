@@ -57,3 +57,48 @@ CREATE TABLE IF NOT EXISTS ubicacion_tienda (
     id_tienda INT,
     FOREIGN KEY (id_tienda) REFERENCES tienda(id_tienda)
 );
+
+CREATE TABLE IF NOT EXISTS admin (
+    id_admin SERIAL PRIMARY KEY,
+    correo_admin VARCHAR(100) NOT NULL UNIQUE,
+    nombre_admin VARCHAR(100) NOT NULL,
+    ubicacion_admin VARCHAR(100),
+    contraseña_admin VARCHAR(100) NOT NULL,
+    id_permisos INT,
+    FOREIGN KEY (id_permisos) REFERENCES permisos(id_permisos)
+);
+
+CREATE TABLE IF NOT EXISTS producto (
+    id_producto SERIAL PRIMARY KEY,
+    stock_producto INTEGER NOT NULL,
+    url_producto VARCHAR(255),
+    nombre_producto VARCHAR(100) NOT NULL,
+    precio_producto INTEGER,
+    id_jefe INTEGER,
+    id_tienda INTEGER,
+    id_carro_compra INTEGER,
+    id_ubicacion_usuario INTEGER,
+    id_ubicacion_tienda INTEGER,
+    FOREIGN KEY (id_jefe) REFERENCES jefe_de_tienda(id_jefe) ON DELETE SET NULL,
+    FOREIGN KEY (id_tienda) REFERENCES tienda(id_tienda) ON DELETE SET NULL,
+    FOREIGN KEY (id_carro_compra) REFERENCES carro_de_compra(id_carro_compra) ON DELETE SET NULL,
+    FOREIGN KEY (id_ubicacion_usuario) REFERENCES ubicacion_usuario(id_ubicacion) ON DELETE SET NULL,
+    FOREIGN KEY (id_ubicacion_tienda) REFERENCES ubicacion_tienda(id_ubicacion_tienda) ON DELETE SET NULL
+);
+
+CREATE TABLE IF NOT EXISTS ranking (
+    id_ranking SERIAL PRIMARY KEY,
+    top_productos VARCHAR(255),
+    id_producto INTEGER,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS carta (
+    id_carta SERIAL PRIMARY KEY,
+    año_carta INTEGER NOT NULL,
+    estado_carta VARCHAR(50),
+    rareza_carta VARCHAR(50),
+    tipo_de_juego VARCHAR(50),
+    id_producto INTEGER,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto) ON DELETE CASCADE
+);
