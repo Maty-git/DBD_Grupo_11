@@ -39,3 +39,11 @@ JOIN carro_de_compra_producto cdp ON cb.id_carro_compra = cdp.id_carro_de_compra
 JOIN producto p ON p.id_producto = cdp.id_producto
 GROUP BY p.id_producto, p.nombre_producto
 ORDER BY total_ventas DESC;
+
+-- Mostrar lista de deseos de un usuario. (10 pts)
+
+SELECT p.nombre_producto, p.url_producto
+FROM lista_de_deseos ld
+JOIN lista_de_deseos_producto ldp ON ld.id_lista_deseos = ldp.id_lista_deseos
+JOIN producto p ON p.id_producto = ldp.id_producto
+WHERE ld.id_cliente = 4;
