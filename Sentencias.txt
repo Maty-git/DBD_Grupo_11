@@ -29,3 +29,13 @@ SELECT p.nombre_producto, ut.comuna_tienda, ut.ciudad_tienda
 FROM producto p
 JOIN ubicacion_tienda ut ON p.id_ubicacion_tienda = ut.id_ubicacion_tienda
 WHERE ut.comuna_tienda = 'Ñuñoa';
+
+-- Mostrar ranking de los productos con mas ventas. (10 pts)
+
+SELECT p.id_producto, p.nombre_producto, 
+SUM(cdp.stock_carro) AS total_ventas
+FROM carro_de_compra_boleta cb
+JOIN carro_de_compra_producto cdp ON cb.id_carro_compra = cdp.id_carro_de_compra
+JOIN producto p ON p.id_producto = cdp.id_producto
+GROUP BY p.id_producto, p.nombre_producto
+ORDER BY total_ventas DESC;
