@@ -23,3 +23,9 @@ FROM carro_de_compra_producto cdp
 JOIN producto p ON cdp.id_producto = p.id_producto
 WHERE cdp.id_carro_de_compra = 1;
 
+-- Mostrar todos los juegos de mesa y cartas que se vendan en una ubicacion geografica especifica. (10 pts)
+
+SELECT p.nombre_producto, ut.comuna_tienda, ut.ciudad_tienda
+FROM producto p
+JOIN ubicacion_tienda ut ON p.id_ubicacion_tienda = ut.id_ubicacion_tienda
+WHERE ut.comuna_tienda = 'Ñuñoa';
