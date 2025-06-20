@@ -1,0 +1,4 @@
+-- Agregar un juego de mesa / carta al carrito de compras. (10 pts)
+
+INSERT INTO carro_de_compra_producto (id_producto, id_carro_de_compra, stock_carro)
+VALUES (2, 3, 1);
