@@ -2,3 +2,8 @@
 
 INSERT INTO carro_de_compra_producto (id_producto, id_carro_de_compra, stock_carro)
 VALUES (2, 3, 1);
+
+-- Eliminar un juego de mesa / carta del carrito de compras. (10 pts)
+
+DELETE FROM carro_de_compra_producto
+WHERE id_producto = 2 AND id_carro_de_compra = 3;
