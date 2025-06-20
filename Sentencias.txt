@@ -7,3 +7,19 @@ VALUES (2, 3, 1);
 
 DELETE FROM carro_de_compra_producto
 WHERE id_producto = 2 AND id_carro_de_compra = 3;
+
+-- Mostrar los juegos de mesa / cartas del carrito de compras (10 pts)
+
+SELECT p.id_producto, p.nombre_producto
+FROM carro_de_compra_producto cdcp
+JOIN producto p ON p.id_producto = cdcp.id_producto
+LEFT JOIN juego_de_mesa jm ON jm.id_producto = p.id_producto
+WHERE cdcp.id_carro_de_compra = 2;
+
+-- Mostrar el precio total a pagar por el carrito de compras. (10 pts)
+
+SELECT SUM(cdp.stock_carro * p.precio_producto) AS total_a_pagar
+FROM carro_de_compra_producto cdp
+JOIN producto p ON cdp.id_producto = p.id_producto
+WHERE cdp.id_carro_de_compra = 1;
+
