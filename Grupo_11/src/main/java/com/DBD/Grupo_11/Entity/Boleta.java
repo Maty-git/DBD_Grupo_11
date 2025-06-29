@@ -16,6 +16,10 @@ public class Boleta {
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
+    private Cliente idCliente;
+
+    @ManyToOne
+    @JoinColumn(name = "id_ubicacion")
+    private UbicacionUsuario idUbicacion;
 
 }

@@ -8,5 +8,16 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idCliente;
-    private String nombre;
+    private String nombreCliente;
+    private String correoCliente;
+    private String contraseniaCliente;
+
+    private String idTienta;
+    private String idPermisos;
+
+
+    @OneToOne(
+            mappedBy = "id_ubicacion"
+    )
+    private UbicacionUsuario idUbicacion;
 }
