@@ -19,9 +19,6 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_jefe")
     private JefeDeTienda JefeDeTienda;
-    @OneToMany
-    @JoinColumn(name = "id_carro_de_compra")
-    private CarroDeCompraProducto carroDeCompraProducto;
     @ManyToOne
     @JoinColumn(name = "id_ubicacion_usuario")
     private UbicacionUsuario ubicacionUsuario;
