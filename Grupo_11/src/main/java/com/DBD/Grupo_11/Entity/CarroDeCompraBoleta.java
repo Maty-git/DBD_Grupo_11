@@ -8,10 +8,12 @@ public class CarroDeCompraBoleta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idCarroDeCompraBoleta;
+
     @ManyToOne
     @JoinColumn(name = "id_carro_de_compra")
-    private CarroDeCompra carroDeCompra;
+    private CarroDeCompra idCarroDeCompra;
+
     @ManyToOne
     @JoinColumn(name = "id_boleta")
-    private Boleta boleta;
+    private Boleta idBoleta;
 }
