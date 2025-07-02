@@ -33,8 +33,8 @@ public class AdminController {
     }
 
     @PutMapping("/update")
-    public Admin updateAdmin(@RequestBody Admin admin){
-        return adminService.update(admin);
+    public void updateAdmin(@RequestBody Admin admin){
+        adminService.update(admin);
     }
 
     @DeleteMapping("/delete/{id}")

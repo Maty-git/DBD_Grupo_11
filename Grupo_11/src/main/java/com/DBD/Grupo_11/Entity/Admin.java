@@ -19,6 +19,6 @@ public class Admin {
     private String ubicacionAdmin;
     private String contraseniaAdmin;
 
-    private Long id_permiso;
+    private Long idPermiso;
 
 }

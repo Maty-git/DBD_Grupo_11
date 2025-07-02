@@ -17,16 +17,25 @@ public class AdminService {
         return admin;
     }
 
-    public Object getById(Long id){
-        return adminRepository.findById(id);
+    public Admin getById(Long id){
+        return adminRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Admin no encontrado con ID: " + id));
     }
 
     public List<Admin> findAll(){
         return adminRepository.findAll();
     }
 
-    public Admin update(Admin adminupdate){
-        return  adminRepository.save(adminupdate);
+    public void update(Admin adminupdate){
+        Long idAdmin = adminupdate.getIdAdmin();
+        Admin admin = getById(idAdmin);
+
+        admin.setIdCorreoAdmin(adminupdate.getIdCorreoAdmin());
+        admin.setNombreAdmin(adminupdate.getNombreAdmin());
+        admin.setUbicacionAdmin(adminupdate.getUbicacionAdmin());
+        admin.setContraseniaAdmin(adminupdate.getContraseniaAdmin());
+        admin.setIdPermiso(adminupdate.getIdPermiso());
+        adminRepository.save(admin);
     }
 
     public void delete(Long id){
