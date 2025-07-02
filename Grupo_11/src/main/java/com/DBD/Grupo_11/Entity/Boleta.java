@@ -4,6 +4,7 @@ package com.DBD.Grupo_11.Entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "boleta")
@@ -16,6 +17,12 @@ public class Boleta {
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
+    private Cliente idCliente;
 
+    @ManyToOne
+    @JoinColumn(name = "id_ubicacion")
+    private UbicacionUsuario idUbicacion;
+
+    @OneToMany(mappedBy = "idBoleta")
+    private List<CarroDeCompraBoleta> idCarroDeCompraBoleta;
 }
