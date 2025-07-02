@@ -1,8 +1,13 @@
 package com.DBD.Grupo_11.Entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "carro_de_compra")
 public class CarroDeCompra {
