@@ -1,4 +1,8 @@
 package com.DBD.Grupo_11.Repository;
 
-public interface CarroDeCompraRepository {
+import com.DBD.Grupo_11.Entity.Admin;
+import com.DBD.Grupo_11.Entity.CarroDeCompra;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CarroDeCompraRepository extends JpaRepository<CarroDeCompra, Long> {
 }

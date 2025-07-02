@@ -1,9 +1,15 @@
 package com.DBD.Grupo_11.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "permisos_admin")
+@Table(name = "admin")
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,7 +18,7 @@ public class Admin {
     private String nombreAdmin;
     private String ubicacionAdmin;
     private String contraseniaAdmin;
-    @OneToOne
-    @JoinColumn(name = "id_permisos")
-    private Permisos permisos;
+
+    private Long id_permiso;
+
 }
