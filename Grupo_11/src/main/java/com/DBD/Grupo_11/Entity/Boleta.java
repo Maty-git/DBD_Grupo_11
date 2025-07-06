@@ -1,11 +1,16 @@
 package com.DBD.Grupo_11.Entity;
 
-
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "boleta")
 public class Boleta {
@@ -22,7 +27,4 @@ public class Boleta {
     @ManyToOne
     @JoinColumn(name = "id_ubicacion")
     private UbicacionUsuario idUbicacion;
-
-    @OneToMany(mappedBy = "idBoleta")
-    private List<CarroDeCompraBoleta> idCarroDeCompraBoleta;
 }

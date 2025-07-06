@@ -19,8 +19,6 @@ public class CarroDeCompra {
     @JoinColumn(name = "id_cliente")
     private Cliente idCliente;
 
-    @OneToMany(mappedBy = "idCarroDeCompra")
-    private List<CarroDeCompraBoleta> idCarroDeCompraBoleta;
 
     @OneToMany(mappedBy = "idCarroDeCompra")
     private List<CarroDeCompraProducto>  idCarroDeCompraProducto;

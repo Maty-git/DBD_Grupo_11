@@ -1,7 +1,6 @@
 package com.DBD.Grupo_11.Controller;
 
 import com.DBD.Grupo_11.Entity.Admin;
-import com.DBD.Grupo_11.Repository.AdminRepository;
 import com.DBD.Grupo_11.Service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +11,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
-    @Autowired
-    private AdminRepository adminRepository;
     @Autowired
     private AdminService adminService;
 

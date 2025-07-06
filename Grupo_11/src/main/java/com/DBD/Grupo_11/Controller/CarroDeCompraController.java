@@ -17,7 +17,7 @@ public class CarroDeCompraController {
     private CarroDeCompraService carroDeCompraService;
 
     // Obtener todos los carros
-    @GetMapping
+    @GetMapping("/getAllCarroDeCompra")
     public List<CarroDeCompra> getAll() {
         return carroDeCompraService.getAll();
     }
@@ -31,7 +31,7 @@ public class CarroDeCompraController {
     }
 
     // Crear un nuevo carro
-    @PostMapping
+    @PostMapping("/saveCarroDeCompra")
     public CarroDeCompra create(@RequestBody CarroDeCompra carroDeCompra) {
         return carroDeCompraService.save(carroDeCompra);
     }

@@ -1,9 +1,14 @@
 package com.DBD.Grupo_11.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "ubicacion_usuario")
 public class UbicacionUsuario {
@@ -16,9 +21,13 @@ public class UbicacionUsuario {
     private String calleUsuario;
 
     @OneToOne
-    @JoinColumn(name = "id_ubicacion")
+    @JoinColumn(name = "id_cliente")
     private Cliente idCliente;
 
     @OneToMany(mappedBy = "idUbicacion")
     private List<Boleta> idBoletas;
+
+    public Long getId() {
+        return idUbicacion;
+    }
 }
