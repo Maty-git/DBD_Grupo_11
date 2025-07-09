@@ -1,4 +1,8 @@
 package com.DBD.Grupo_11.Repository;
 
-public interface RankingCartaRepository {
+import com.DBD.Grupo_11.Entity.RankingCarta;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RankingCartaRepository extends JpaRepository<RankingCarta, Long> {
+    RankingCarta getById(Long id);
 }
