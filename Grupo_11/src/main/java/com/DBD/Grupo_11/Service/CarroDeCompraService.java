@@ -2,12 +2,16 @@ package com.DBD.Grupo_11.Service;
 
 import com.DBD.Grupo_11.Entity.CarroDeCompra;
 import com.DBD.Grupo_11.Repository.CarroDeCompraRepository;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Getter
+@Setter
 @Service
 public class CarroDeCompraService {
     @Autowired

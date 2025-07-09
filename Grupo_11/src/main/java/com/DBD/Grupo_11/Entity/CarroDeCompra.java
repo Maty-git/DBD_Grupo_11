@@ -1,13 +1,15 @@
 package com.DBD.Grupo_11.Entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Setter
-@Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "carro_de_compra")
 public class CarroDeCompra {
@@ -21,7 +23,5 @@ public class CarroDeCompra {
 
 
     @OneToMany(mappedBy = "idCarroDeCompra")
-    private List<CarroDeCompraProducto>  idCarroDeCompraProducto;
-
-
+    private List<CarroDeCompraProducto> idCarroDeCompraProducto;
 }
