@@ -32,7 +32,7 @@ public class JuegoDeMesaService {
 
         juegoDeMesa.setTipoJuegoMesa(juegoDeMesaUpdate.getTipoJuegoMesa());
         juegoDeMesa.setTipoDeJuego(juegoDeMesaUpdate.getTipoDeJuego());
-        juegoDeMesa.setIdProducto(juegoDeMesaUpdate.getIdProducto());
+        juegoDeMesa.setProducto(juegoDeMesaUpdate.getProducto());
 
         juegoDeMesaRepository.save(juegoDeMesa);
     }

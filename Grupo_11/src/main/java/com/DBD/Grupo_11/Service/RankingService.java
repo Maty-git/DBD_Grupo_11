@@ -18,8 +18,8 @@ public class RankingService {
     }
 
     public Ranking getById(Long id){
-        return rankingrepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Ranking no encontrado con ID: " + id));}
+        return rankingrepository.findById(id);
+    }
 
     public List<Ranking> findAll(){return rankingrepository.findAll();}
 
