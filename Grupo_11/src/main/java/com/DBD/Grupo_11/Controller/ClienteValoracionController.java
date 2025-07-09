@@ -1,6 +1,9 @@
 package com.DBD.Grupo_11.Controller;
 
 import com.DBD.Grupo_11.Entity.ClienteValoracion;
+import com.DBD.Grupo_11.Repository.CartaRepository;
+import com.DBD.Grupo_11.Repository.ClienteRepository;
+import com.DBD.Grupo_11.Repository.ClienteValoracionRepository;
 import com.DBD.Grupo_11.Service.ClienteValoracionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +18,8 @@ public class ClienteValoracionController {
 
     @Autowired
     private ClienteValoracionService clienteValoracionService;
+    @Autowired
+    private ClienteValoracionRepository clienteValoracionRepository;
 
     @GetMapping
     public List<ClienteValoracion> getAll() {
@@ -48,5 +53,9 @@ public class ClienteValoracionController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    @GetMapping("/findByCliente_IdClienteAndValoracion_IdValoracion/{idCliente},{idValoracion}")
+    public Optional<ClienteValoracion> findByCliente_IdClienteAndValoracion_IdValoracion(Long idCliente, Long idValoracion){
+        return clienteValoracionRepository.findByCliente_IdClienteAndValoracion_IdValoracion(idCliente,idValoracion);
     }
 }

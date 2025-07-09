@@ -1,11 +1,13 @@
 package com.DBD.Grupo_11.Controller;
 
 import com.DBD.Grupo_11.Entity.Admin;
+import com.DBD.Grupo_11.Repository.AdminRepository;
 import com.DBD.Grupo_11.Service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -13,6 +15,8 @@ import java.util.List;
 public class AdminController {
     @Autowired
     private AdminService adminService;
+    @Autowired
+    private AdminRepository adminRepository;
 
     @PostMapping("/saveAdmin")
     public Admin saveAdmin(@RequestBody Admin admin) {
@@ -38,5 +42,10 @@ public class AdminController {
     @DeleteMapping("/delete/{id}")
     public void deleteAdmin(@PathVariable Long id){
         adminService.delete(id);
+    }
+
+    @GetMapping("/findByIdCorreoAdmin/{correo}")
+    public Optional<Admin> findByIdCorreoAdmin(@PathVariable String correo){
+        return adminRepository.findByIdCorreoAdmin(correo);
     }
 }

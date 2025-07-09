@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface JuegoDeMesaRepository extends JpaRepository<JuegoDeMesa, Long> {
     JuegoDeMesa getById(Long id);
     @Query(value = "SELECT tipoJuegoMesa FROM JuegoDeMesa WHERE tipoJuegoMesa=tipo",  nativeQuery = true)
-    Optional<JuegoDeMesa> findByTipoJuegoMesa(@Param("tipo") String tipo);
+    Optional<JuegoDeMesa> findByTipoJuegoMesa(String tipo);
     @Query(value = "SELECT tipoDeJuego FROM JuegoDeMesa WHERE tipoDeJuego=tipo",   nativeQuery = true)
     Optional<JuegoDeMesa> findByTipoDeJuego(String tipo);
 }

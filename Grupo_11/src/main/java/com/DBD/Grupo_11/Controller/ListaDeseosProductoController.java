@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/listadedeseosproducto")
@@ -27,4 +28,9 @@ public class ListaDeseosProductoController {
 
     @GetMapping("/update")
     public void updateListaDeseosProducto(@RequestBody ListaDeseosProducto listaDeseosProducto){ listaDeseosProductoService.update(listaDeseosProducto); }
+
+    @GetMapping
+    public Optional<ListaDeseosProducto> findByListaDeDeseos_IdListaDeDeseos(Long idLista){
+        return listaDeseosProductoRepository.findByListaDeDeseos_IdListaDeDeseos(idLista);
+    }
 }

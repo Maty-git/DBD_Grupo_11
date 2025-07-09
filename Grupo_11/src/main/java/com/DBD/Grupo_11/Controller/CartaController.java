@@ -1,6 +1,7 @@
 package com.DBD.Grupo_11.Controller;
 
 import com.DBD.Grupo_11.Entity.Carta;
+import com.DBD.Grupo_11.Repository.CartaRepository;
 import com.DBD.Grupo_11.Service.CartaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ public class CartaController {
 
     @Autowired
     private CartaService cartaService;
+    @Autowired
+    private CartaRepository cartaRepository;
 
     // Obtener todas las cartas
     @GetMapping
@@ -53,5 +56,21 @@ public class CartaController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    @GetMapping("/findByRarezaCarta/{rareza}")
+    public List<Carta> findByRarezaCarta(String rareza){
+        return cartaRepository.findByRarezaCarta(rareza);
+    }
+    @GetMapping("/findByEstadoCarta/{estado}")
+    public List<Carta> findByEstadoCarta(String estado){
+        return cartaRepository.findByEstadoCarta(estado);
+    }
+    @GetMapping("/findByAnnoCarta/{anno}")
+    public List<Carta> findByAnnoCarta(int anno){
+        return cartaRepository.findByAnnoCarta(anno);
+    }
+    @GetMapping("/findByTipoDeJuego/{tipo}")
+    public List<Carta> findByTipoDeJuego(String tipo){
+        return  cartaRepository.findByTipoDeJuego(tipo);
     }
 }

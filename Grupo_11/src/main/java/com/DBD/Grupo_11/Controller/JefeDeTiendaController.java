@@ -1,6 +1,7 @@
 package com.DBD.Grupo_11.Controller;
 
 import com.DBD.Grupo_11.Entity.JefeDeTienda;
+import com.DBD.Grupo_11.Repository.JefeDeTiendaRepository;
 import com.DBD.Grupo_11.Service.JefeDeTiendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,8 @@ public class JefeDeTiendaController {
 
     @Autowired
     private JefeDeTiendaService jefeService;
-
+    @Autowired
+    private JefeDeTiendaRepository jefeDeTiendaRepository;
     @GetMapping
     public List<JefeDeTienda> obtenerTodos() {
         return jefeService.obtenerTodos();
@@ -38,5 +40,10 @@ public class JefeDeTiendaController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Long id) {
         jefeService.eliminar(id);
+    }
+
+    @GetMapping("/findByCorreoJefe/{correo}")
+    private Optional<JefeDeTienda> findByCorreoJefe(String correo){
+        return jefeDeTiendaRepository.findByCorreoJefe(correo);
     }
 }

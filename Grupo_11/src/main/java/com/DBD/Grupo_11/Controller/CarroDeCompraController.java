@@ -1,6 +1,8 @@
 package com.DBD.Grupo_11.Controller;
 
 import com.DBD.Grupo_11.Entity.CarroDeCompra;
+import com.DBD.Grupo_11.Repository.BoletaRepository;
+import com.DBD.Grupo_11.Repository.CarroDeCompraRepository;
 import com.DBD.Grupo_11.Service.CarroDeCompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,8 @@ public class CarroDeCompraController {
 
     @Autowired
     private CarroDeCompraService carroDeCompraService;
+    @Autowired
+    private CarroDeCompraRepository carroDeCompraRepository;
 
     // Obtener todos los carros
     @GetMapping("/getAllCarroDeCompra")
@@ -63,4 +67,8 @@ public class CarroDeCompraController {
             return ResponseEntity.notFound().build();
         }
     }
+    @GetMapping("/findByIdCliente_IdCliente/{idCliente}")
+    public Optional<CarroDeCompra> findByIdCliente_IdCliente(@PathVariable Long idCliente){
+        return carroDeCompraRepository.findByIdCliente_IdCliente(idCliente);
+    };
 }

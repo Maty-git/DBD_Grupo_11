@@ -5,9 +5,11 @@ import com.DBD.Grupo_11.Entity.JuegoDeMesa;
 import com.DBD.Grupo_11.Repository.JuegoDeMesaRepository;
 import com.DBD.Grupo_11.Service.JuegoDeMesaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/juegodemesa")
@@ -33,4 +35,14 @@ public class JuegoDeMesaController {
 
     @GetMapping("/delete")
     public void deleteJuegoDeMesa(@RequestParam Long id){ juegoDeMesaService.delete(id);}
+
+    @GetMapping("/findByTipoJuegoMesa/{tipo}")
+    public Optional<JuegoDeMesa> findByTipoJuegoMesa(@PathVariable String tipo){
+        return juegoDeMesaRepository.findByTipoJuegoMesa(tipo);
+    }
+
+    @GetMapping("/findByTipoDeJuego/{tipo}")
+    public Optional<JuegoDeMesa> findByTipoDeJuego(@PathVariable String tipo){
+        return juegoDeMesaRepository.findByTipoDeJuego(tipo);
+    }
 }
