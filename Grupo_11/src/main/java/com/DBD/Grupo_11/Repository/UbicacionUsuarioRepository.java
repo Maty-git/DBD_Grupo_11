@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UbicacionUsuarioRepository extends JpaRepository<UbicacionUsuario, Long> {
+    UbicacionUsuario getById(Long id);
 }
