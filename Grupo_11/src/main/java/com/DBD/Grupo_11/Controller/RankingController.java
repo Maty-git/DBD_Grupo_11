@@ -17,7 +17,7 @@ public class RankingController {
     public Object saveRanking(@RequestBody Ranking ranking) {return rankingService.save(ranking);}
 
     @GetMapping("/findById/{id}")
-    public Object findById(@PathVariable Long id){return rankingService.getById(id);}
+    public Object findById(@PathVariable int id){return rankingService.getById(id);}
 
     @GetMapping("/findAll")
     public List<Ranking> findAll(){return rankingService.findAll();}

@@ -44,8 +44,8 @@ public class AdminController {
         adminService.delete(id);
     }
 
-    @GetMapping("/findByIdCorreoAdmin/{correo}")
-    public Optional<Admin> findByIdCorreoAdmin(@PathVariable String correo){
-        return adminRepository.findByIdCorreoAdmin(correo);
+    @GetMapping("/findByIdCorreoAdmin_AndContraseniaAdmin/{correo}/{contra}")
+    public Optional<Admin> findByIdCorreoAdmin_AndContraseniaAdmin(@PathVariable String correo,@PathVariable String contra){
+        return adminRepository.findByIdCorreoAdmin_AndContraseniaAdmin(correo, contra);
     }
 }
