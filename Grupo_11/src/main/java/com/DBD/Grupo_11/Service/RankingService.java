@@ -17,19 +17,25 @@ public class RankingService {
         return ranking;
     }
 
-    public Ranking getById(Long id){
-        return rankingrepository.findById(id);
+    public Ranking getById(int id){
+        return rankingrepository.getById(id);
     }
 
     public List<Ranking> findAll(){return rankingrepository.findAll();}
 
     public void update(Ranking RankingUpdate) {
         Long idRanking = RankingUpdate.getIdRanking();
-        Ranking Ranking = getById(idRanking);
+        int i;
+        for(i = 0; i < idRanking; i++){}
+        Ranking Ranking = getById(i);
 
         Ranking.setTopProductos(RankingUpdate.getTopProductos());
         Ranking.setProducto(RankingUpdate.getProducto());
     }
-    public void delete(Long id){ rankingrepository.delete(getById(id));}
+    public void delete(Long id){
+        int i;
+        for(i = 0; i < id; i++){}
+        rankingrepository.delete(getById(i));
+    }
 }
 

@@ -1,6 +1,7 @@
 package com.DBD.Grupo_11.Service;
 
 import com.DBD.Grupo_11.Entity.JuegoDeMesa;
+import com.DBD.Grupo_11.Entity.Producto;
 import com.DBD.Grupo_11.Repository.JuegoDeMesaRepository;
 import com.DBD.Grupo_11.Repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ public class JuegoDeMesaService {
     private JuegoDeMesaRepository juegoDeMesaRepository;
     @Autowired
     private ProductoRepository productoRepository;
+    @Autowired
+    private ProductoService productoService;
 
     public List<JuegoDeMesa> findAll() { return juegoDeMesaRepository.findAll(); }
 
@@ -32,7 +35,6 @@ public class JuegoDeMesaService {
 
         juegoDeMesa.setTipoJuegoMesa(juegoDeMesaUpdate.getTipoJuegoMesa());
         juegoDeMesa.setTipoDeJuego(juegoDeMesaUpdate.getTipoDeJuego());
-        juegoDeMesa.setProducto(juegoDeMesaUpdate.getProducto());
 
         juegoDeMesaRepository.save(juegoDeMesa);
     }

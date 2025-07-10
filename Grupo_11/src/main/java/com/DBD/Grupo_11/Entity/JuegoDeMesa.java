@@ -12,11 +12,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "juego_de_mesa")
 public class JuegoDeMesa {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idJuegoDeMesa;
     private String tipoJuegoMesa;
     private String tipoDeJuego;
-    @OneToOne
-    @JoinColumn(name = "id_producto")
-    private Producto producto;
+    private Long idProducto;
 }
